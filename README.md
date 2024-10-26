@@ -36,4 +36,5 @@ The Rule Engine with Abstract Syntax Tree (AST) is a 3-tier application designed
 7.  install angular -- npm install -g @angular
 8.  run the command to download all necessary dependencies -- npm install
 9.  add angular material -- ng add @angular/material
-10.  run angular app --- ng serve 
+10.  run angular app --- ng serve
+11.  To test the application open browser and search localhost:4200
