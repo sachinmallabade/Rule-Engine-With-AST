@@ -1,0 +1,29 @@
+<div class="rule-create-container">
+  <h2>Create Rule</h2>
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="ruleString">Enter Rule:</label>
+      <input 
+        type="text" 
+        class="form-control" 
+        [(ngModel)]="ruleString" 
+        name="ruleString" 
+        id="ruleString" 
+        required
+        placeholder="e.g., (age > 30 AND department = 'Sales') OR salary > 50000"
+      >
+    </div>
+    <button type="submit" class="btn btn-primary">Create Rule</button>
+  </form>
+
+  <!-- Show error message if any -->
+  <div *ngIf="errorMessage" class="alert alert-danger mt-3">
+    {{ errorMessage }}
+  </div>
+
+  <!-- Show AST if generated -->
+  <div *ngIf="ast">
+    <h3>Generated AST:</h3>
+    <pre>{{ ast | json }}</pre>
+  </div>
+</div>

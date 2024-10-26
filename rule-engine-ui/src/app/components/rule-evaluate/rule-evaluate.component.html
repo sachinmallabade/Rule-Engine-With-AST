@@ -1,0 +1,35 @@
+<div>
+  <h2>Evaluate Rule</h2>
+  <label for="ruleId">Rule ID:</label>
+  <input type="number" [(ngModel)]="ruleId" placeholder="Enter Rule ID" />
+
+  <label for="age">Age:</label>
+  <input type="number" [(ngModel)]="age" placeholder="Enter Age" />
+
+  <label for="department">Department:</label>
+  <input type="text" [(ngModel)]="department" placeholder="Enter Department" />
+
+  <label for="salary">Salary:</label>
+  <input type="number" [(ngModel)]="salary" placeholder="Enter Salary" />
+
+  <label for="experience">Experience:</label>
+  <input type="number" [(ngModel)]="experience" placeholder="Enter Experience" />
+
+  <button (click)="evaluateRule()">Evaluate Rule</button>
+</div>
+
+<div *ngIf="evaluationResults !== null">
+  <h3>Evaluation Results:</h3>
+  <p *ngIf="evaluationResults.length > 0; else noResults">
+    Result: {{ evaluationResults[0] ? 'True' : 'False' }}
+  </p>
+  <ng-template #noResults>
+    <p>No results to display.</p>
+  </ng-template>
+</div>
+
+<!-- Display error message if any -->
+<div *ngIf="errorMessage" style="color: red;">
+  <h4>Error:</h4>
+  <p>{{ errorMessage }}</p>
+</div>

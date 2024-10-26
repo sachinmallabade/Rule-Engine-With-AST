@@ -1,0 +1,24 @@
+<div class="container">
+  <h2>Combine Rules</h2>
+
+  <div>
+    <h3>Enter Rule Strings</h3>
+    <div class="rule-group" *ngFor="let rule of ruleStrings; let i = index; trackBy: trackByIndex">
+      <input
+        #ruleInput
+        type="text"
+        [(ngModel)]="ruleStrings[i]"
+        placeholder="Enter rule string"
+      />
+      <button class="delete-btn" (click)="deleteRule(i)">Delete</button>
+    </div>
+    <button (click)="addRule()">Add Rule</button>
+    <button (click)="combineRules()">Combine Rules</button>
+  </div>
+
+  <!-- Error Message -->
+  <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+
+  <!-- Combined Rule Output -->
+  <pre *ngIf="combinedRule" class="ast-output">{{ combinedRule }}</pre>
+</div>
